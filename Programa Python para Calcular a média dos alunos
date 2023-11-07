@@ -1,0 +1,224 @@
+#Menu
+Menu = 0
+while Menu != 6:
+    print('''              ____________________________________________
+              |                 Menu                     |   
+              |   [ 1 ]Adicionar Alunos                  |
+              |   [ 2 ]Adicionar Notas                   |
+              |   [ 3 ]Salvar                            |
+              |   [ 4 ]Visualizar conteudo do arquivo    |
+              |   [ 5 ]Calculadora                       |
+              |   [ 6 ]Sair do Programa                  |
+              |__________________________________________|''')
+    Menu = int(input('Escolha uma opção:'))
+    #Adiciona Alunos
+    if Menu == 1:
+        Alunos = input('Digite o nome do aluno:')
+    #Adiciona Notas
+    elif Menu == 2:
+        for notas1 in range(1):
+            al_nota1 = int(input('digite a nota da Av1:'))
+            notas1 = al_nota1
+            continue
+        for notas2 in range(1):
+            al_nota2 = int(input('Digite a nota da Av2:'))
+            notas2 = al_nota2
+            continue
+        for notasF in range(1):
+            al_notaF = al_nota1 + al_nota2
+            notasF = al_notaF / 2
+            if notasF >= 6:
+                result = 'aprovado'
+            elif notasF <= 6:
+                result = 'reprovado'
+                al_nota3 = int(input('Digite a nota da Av3:'))
+                if al_nota1 > al_nota2:
+                    al_nota2 = al_nota3
+                    al_notaF = al_nota1 + al_nota2
+                    notasF = al_notaF / 2
+                    if notasF >= 6:
+                        result = 'aprovado'
+                    else:
+                        result = 'reprovado'
+                elif al_nota2 > al_nota1:
+                    al_nota1 = al_nota3
+                    al_notaF = al_nota1 + al_nota2
+                    notasF = al_notaF / 2
+                    if notasF >= 6:
+                        result = 'aprovado'
+                    else:
+                        result = 'reprovado'
+                else:
+                    continue
+            break
+    #Salvamento de Dados
+    elif Menu == 3:
+        with open('C://Users/POSITIVO/Documents/Trabalho/Cituação.txt', 'a', encoding='utf-8') as arquivo:
+           lista = ['Aluno:{}'.format(Alunos.capitalize()), 'Nota:{}'.format(notasF), 'Cituação:{}'.format(result.capitalize())]
+           arquivo.write('{}\n'.format(lista))
+           arquivo.close()
+    #Visualizar o Conteudo do arquivo
+    elif Menu == 4:
+        with open('C://Users/POSITIVO/Documents/Trabalho/Cituação.txt', 'r', encoding='utf-8') as arquivo:
+            pasta = arquivo.read()
+            print(pasta)
+            arquivo.close()
+    #Calculadora
+    elif Menu == 5:
+        Calculadora = 0
+        while Calculadora != 5:
+                    print('''                             ___________________________
+                             |          MENU           |
+                             |     [ 1 ]Soma           |
+                             |     [ 2 ]Diminuição     |
+                             |     [ 3 ]Divisão        |
+                             |     [ 4 ]Multiplicação  |
+                             |     [ 5 ]Exit           | 
+                             |_________________________|     ''')
+                    Calculadora = int(input('Escolha uma opção:'))
+                    #Soma
+                    if Calculadora == 1:
+                         valor1 = int(input('Digite um valor:'))
+                         valor2 = int(input('Digite um valor:'))
+                         result1 = valor1 + valor2
+                         print(result1)
+                         #Sub-Menu
+                         Continuar = 0
+                         while Continuar != 3:
+                             print('''                                      __________________________________________
+                                      |               Sub-Menu                 |
+                                      |    [ 1 ]Continuar Somando              |
+                                      |    [ 2 ]Salvar e continuar Somando     |
+                                      |    [ 3 ]Voltar ao Menu da Calculadora  |
+                                      |________________________________________|''')
+                             Continuar = int(input('Escolha uma Sub-Opção:'))
+                             #Continuar Somando
+                             if Continuar == 1:
+                                valor3 = int(input('Digite um valor:'))
+                                result2 = result1 + valor3
+                                Lista = [print(result2)]
+                             #Salva e continuar Somando
+                             elif Continuar == 2:
+                                 for Lista in range(1):
+                                     valor3 = int(input('Digite um valor:'))
+                                     result2 = result2 + valor3
+                                     Lista = [print(result2)]
+                             #Voltar ao Menu da Calculadora
+                             elif Continuar == 3:
+                                print('Voltando ao Menu da Calculadora...')
+                             #Faixa de opção inesistente
+                             else:
+                                print('ERR0...Tente de novo')
+                    #Diminuição
+                    elif Calculadora == 2:
+                        valor1 = int(input('Digite um valor:'))
+                        valor2 = int(input('Digite um valor:'))
+                        result1 = valor1 - valor2
+                        print(result1)
+                        #Sub-Menu
+                        Continuar = 0
+                        while Continuar != 3:
+                            print('''                                      __________________________________________
+                                     |               Sub-Menu                 |
+                                     |    [ 1 ]Continuar Diminuindo           |
+                                     |    [ 2 ]Salvar e continuar Diminuindo  |
+                                     |    [ 3 ]Voltar ao Menu da Calculadora  |
+                                     |________________________________________|''')
+                            Continuar = int(input('Escolha uma Sub-Opção:'))
+                            #Continuar Diminuindo
+                            if Continuar == 1:
+                                valor3 = int(input('Digite um valor:'))
+                                result2 = result1 - valor3
+                                Lista = [print(result2)]
+                            #Salvar e continuar Diminuindo
+                            elif Continuar == 2:
+                                for Lista in range(1):
+                                    valor3 = int(input('Digite um valor:'))
+                                    result2 = result2 - valor3
+                                    Lista = [print(result2)]
+                            #Voltar ao Menu da Calculadora
+                            elif Continuar == 3:
+                                print('Voltando ao Menu da Calculadora...')
+                            #Faixa de opção inesistente
+                            else:
+                                print('ERR0...Tente de novo')
+                    #Divisão
+                    elif Calculadora == 3:
+                        valor1 = int(input('Digite um valor:'))
+                        valor2 = int(input('Digite um valor:'))
+                        result1 = valor1 / valor2
+                        print(result1)
+                        #Sub-Menu
+                        Continuar = 0
+                        while Continuar != 3:
+                            print('''                                      __________________________________________
+                                     |               Sub-Menu                 |
+                                     |    [ 1 ]Continuar Dividindo            |
+                                     |    [ 2 ]Salvar e continuar Dividindo   |
+                                     |    [ 3 ]Voltar ao Menu da Calculadora  |
+                                     |________________________________________|''')
+                            Continuar = int(input('Escolha uma Sub-Opção:'))
+                            #Continuar Dividindo
+                            if Continuar == 1:
+                                valor3 = int(input('Digite um valor:'))
+                                result2 = result1 / valor3
+                                Lista = [print(result2)]
+                            #Salvar e continuar Dividindo
+                            elif Continuar == 2:
+                                for Lista in range(1):
+                                    valor3 = int(input('Digite um valor:'))
+                                    result2 = result2 / valor3
+                                    Lista = [print(result2)]
+                            #Voltar ao Menu da Calculadora
+                            elif Continuar == 3:
+                                print('Voltando ao Menu da Calculadora...')
+                            #Faixa de opção inesistente
+                            else:
+                                print('ERR0...Tente de novo')
+                    #Multiplicação
+                    elif Calculadora == 4:
+                        valor1 = int(input('Digite um valor:'))
+                        valor2 = int(input('Digite um valor:'))
+                        result1 = valor1 * valor2
+                        print(result1)
+                        #Sub-Menu
+                        Continuar = 0
+                        while Continuar != 3:
+                            print('''                                         _____________________________________________
+                                     |               Sub-Menu                    |
+                                     |    [ 1 ]Continuar Multiplicando           |
+                                     |    [ 2 ]Salvar e continuar Multiplicando  |
+                                     |    [ 3 ]Voltar ao Menu da Calculadora     |
+                                     |___________________________________________|''')
+                            Continuar = int(input('Escolha uma Sub-Opção:'))
+                            #Continuar Multiplicando
+                            if Continuar == 1:
+                                valor3 = int(input('Digite um valor:'))
+                                result2 = result1 * valor3
+                                Lista = [print(result2)]
+                            #Salvar e continuar Multiplicando
+                            elif Continuar == 2:
+                                for Lista in range(1):
+                                    valor3 = int(input('Digite um valor:'))
+                                    result2 = result2 * valor3
+                                    Lista = [print(result2)]
+                            #Voltar ao Menu da Calculadora
+                            elif Continuar == 3:
+                                print('Voltando ao Menu da Calculadora...')
+                            #Faixa de opção inesistente
+                            else:
+                                print('ERR0...Tente de novo')
+                    #Exit
+                    elif Calculadora == 5:
+                        print('Voltando ao Menu principal...')
+                        break
+                    #Faixa de opção inesistente
+                    else:
+                        print('ERR0...Tente de novo')
+    #Finalização do Programa
+    elif Menu == 6:
+        print('Finalizando...')
+        break
+    #Faixa de opção inesistente
+    else:
+        print('ERR0...Tente de novo')
