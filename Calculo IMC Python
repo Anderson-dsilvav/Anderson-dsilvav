@@ -1,0 +1,8 @@
+altura = float(input("Digite sua Altura: "))
+peso = float(input("Digite seu peso: "))
+
+altura2 = altura**2
+
+IMC = peso/altura2
+
+print(IMC)
