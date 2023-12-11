@@ -6,4 +6,4 @@ altura2 = altura**2
 
 IMC = peso/altura2
 
-print(IMC)
+print("Seu IMC é de:",IMC)
